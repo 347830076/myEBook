@@ -1,0 +1,1 @@
+<img class="zoom-custom-imgs" :src="$withBase('/assets/img/bg.jpg')">
