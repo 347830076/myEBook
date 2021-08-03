@@ -6,10 +6,10 @@
 # 生成静态文件
 npm run build
 
-# 先提交代码到master分支
+# 先提交代码到main分支
 git add -A
 git commit -m 'deploy'
-git push -f origin master
+git push -f origin main
 
 # 进入生成的文件夹
 cd dist
@@ -25,6 +25,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:347830076/myBlog.git master:gh-pages
+git push -f git@github.com:347830076/myBlog.git main:gh-pages
 
 cd -

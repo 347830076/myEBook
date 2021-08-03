@@ -22,7 +22,7 @@ FreeCodeCamp 是一个自由开源的学习编程的社区，致力于帮助人�
 
 点击 html 基础练习 如下图：
 
-![freecodecamp](./img/freecodecamp.jpg)
+<img src="./img/freecodecamp.jpg" class="zoom-custom-imgs">
 
 大家先把 **freecodecamp** 的 **html基础介绍部分** 的题目刷了。
 
