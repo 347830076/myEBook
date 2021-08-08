@@ -5,6 +5,9 @@
     .code-copy{
       height: 0px;
     }
+    p, ul, ol{
+      line-height: 1.5;
+    }
 </style>
 <template>
   <div
