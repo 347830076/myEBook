@@ -14,5 +14,5 @@
   href: 规定被链接文档的位置。
   type：规定被链接文档的 MIME 类型。
  -->
-<link rel="shortcut icon" href="img/web.icon" type="image/x-icon"/>
+<link rel="shortcut icon" href="./img/web.icon" type="image/x-icon"/>
 ```
