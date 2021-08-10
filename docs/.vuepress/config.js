@@ -108,6 +108,7 @@ module.exports = {
                     '/html/8-表格',
                     '/html/9-内嵌框架',
                     '/html/10-表单标签',
+                    '/html/11-icon',
                 ]
             },
             // {
