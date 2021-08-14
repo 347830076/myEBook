@@ -5,6 +5,9 @@
     .code-copy{
       height: 0px;
     }
+    .theme-default-content code{
+      color: #ea4335;
+    }
     p, ul, ol{
       line-height: 1.5;
     }
