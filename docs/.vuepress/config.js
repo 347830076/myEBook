@@ -117,6 +117,7 @@ module.exports = {
                     '/html/9-内嵌框架',
                     '/html/10-表单标签',
                     '/html/11-icon',
+                    '/html/12-html5',
                 ]
             },
             // {
