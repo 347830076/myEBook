@@ -15,37 +15,45 @@ module.exports = {
         ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
         ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
     ],
-    plugins: {
+    plugins: [
         // 代码实时展示效果
-        'demo-block': {
-            settings: {
+        [
+            'demo-block',
+            {
+                settings: {
+                }
             }
-        },
-        'vuepress-plugin-element-tabs': true,
+        ],
+        [
+            'vuepress-plugin-element-tabs'
+        ],
         // 代码块复制功能
-        'vuepress-plugin-code-copy': true,
+        [
+            'vuepress-plugin-code-copy'
+        ],
         // 图片放大
-        '@vuepress/medium-zoom': {
-            selector: 'img.zoom-custom-imgs'
-        },
-        // 返回顶部
-        '@vuepress/back-to-top': {},
-        //最后更新时间
-        '@vuepress/last-updated':
-        {
-            transformer: (timestamp) => {
-                return moment(timestamp).format('LLLL')
+        [
+            '@vuepress/medium-zoom',
+            {
+                selector: 'img.zoom-custom-imgs',
+                 // See: https://github.com/francoischalifour/medium-zoom#options
+                options: {
+                    margin: 16
+                }
             }
-        },
-
-        // '@vuepress/pwa': {
-        //     serviceWorker: true,
-        //     updatePopup: {
-        //         message: "发现新内容可用",
-        //         buttonText: "刷新"
-        //     }
-        // }
-    },
+        ],
+        // 返回顶部
+        require('./src/plugins/back-to-top/plugin.js'),
+        //最后更新时间
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp) => {
+                    return moment(timestamp).format('LLLL')
+                }
+            }
+        ]
+    ],
     themeConfig: {
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
         repo: 'https://github.com/347830076/',
