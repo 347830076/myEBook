@@ -16,7 +16,7 @@
 
 HTML5 提供了新的语义元素来明确一个Web页面的不同部分:
 
-```hmtl
+```js
 <header>头部</header>
 <nav>导航栏</nav>
 <section>章节</section>
@@ -163,5 +163,7 @@ IE8 及更早IE版本无法在这些元素中渲染CSS效果，以至于你不�
 ```
 
 以上代码在浏览器小于IE9版本时会加载html5shiv.js文件. 你必须将其放置于`<head>` 元素中，因为 IE浏览器需要在头部加载后渲染这些HTML5的新元素
+
+[更多HTML5教程](https://www.runoob.com/html/html5-intro.html)
 
 
