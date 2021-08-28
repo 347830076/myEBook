@@ -117,8 +117,8 @@ module.exports = {
                     '/html/9-内嵌框架',
                     '/html/10-表单标签',
                     '/html/11-icon',
-                    '/html/12-html5',
-                    '/html/13-元素分类',
+                    '/html/12-元素分类',
+                    '/html/13-html5',
                     '/html/14-其他功能标签',
                     '/html/15-html学习测试',
                 ]
