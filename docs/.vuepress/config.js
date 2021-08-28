@@ -119,8 +119,9 @@ module.exports = {
                     '/html/11-icon',
                     '/html/12-元素分类',
                     '/html/13-html5',
-                    '/html/14-其他功能标签',
-                    '/html/15-html学习测试',
+                    '/html/14-a标签小妙用',
+                    '/html/15-其他功能标签',
+                    '/html/16-html学习测试',
                 ]
             },
             // {
