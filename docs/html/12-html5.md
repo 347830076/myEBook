@@ -166,4 +166,10 @@ IE8 及更早IE版本无法在这些元素中渲染CSS效果，以至于你不�
 
 [更多HTML5教程](https://www.runoob.com/html/html5-intro.html)
 
+### html 参考手册
+
+<a href="https://www.w3school.com.cn/tags/index.asp"> w3school html标签手册 </a>
+
+<a href="https://www.runoob.com/tags/html-reference.html"> 菜鸟教程 html标签手册 </a>
+
 
