@@ -1,0 +1,452 @@
+<!--
+ * @Author: yu
+ * @Date: 2020-08-15 16:05:12
+ * @LastEditTime: 2020-09-02 12:07:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \new__book\css\docs\lesson\lesson3_3.md
+-->
+# 伪类选择器
+
+| 选择符				 | 描述																			 | 版本		 |
+| :--------------------: | ----------------------------------------------------------------------------- | :-------: |
+| E:link				 | 设置超链接a在未被访问前的样式。												 | CSS1		 |
+| E:visited				 | 设置超链接a在其链接地址已被访问过时的样式。									 | CSS1		 |
+| E:hover				 | 设置元素在其鼠标悬停时的样式。												 | CSS1/2	 |
+| E:active				 | 设置元素在被用户激活<br/>(在鼠标点击与释放之间发生的事件)时的样式。			 | CSS1/2	 |
+| E:focus				 | 设置元素在成为输入焦点<br/>(该元素的onfocus事件发生)时的样式。				 | CSS1/2	 |
+| E:lang(fr)			 | 匹配使用特殊语言的E元素。很少用												 | CSS2		 |
+| E:not(s)				 | 匹配不含有s选择符的元素E。													 | CSS3		 |
+| E:root				 | 匹配E元素在文档的根元素。常指html元素										 | CSS3		 |
+| E:first-child			 | 匹配父元素的第一个子元素E。													 | CSS2		 |
+| E:last-child			 | 匹配父元素的最后一个子元素E。												 | CSS3		 |
+| E:only-child			 | 匹配父元素仅有的一个子元素E。												 | CSS3		 |
+| E:nth-child(n)		 | 匹配父元素的第n个子元素E。													 | CSS3		 |
+| E:nth-last-child(n)	 | 匹配父元素的倒数第n个子元素E。												 | CSS3		 |
+| E:first-of-type		 | 匹配同类型中的第一个同级兄弟元素E。											 | CSS3		 |
+| E:last-of-type		 | 匹配同类型中的最后一个同级兄弟元素E。										 | CSS3		 |
+| E:only-of-type		 | 匹配同类型中的唯一的一个同级兄弟元素E。										 | CSS3		 |
+| E:nth-of-type(n)		 | 匹配同类型中的第n个同级兄弟元素E。											 | CSS3		 |
+| E:nth-last-of-type(n)	 | 匹配同类型中的倒数第n个同级兄弟元素E。										 | CSS3		 |
+| E:empty				 | 匹配没有任何子元素（包括text节点）的元素E。									 | CSS3		 |
+| E:checked				 | 匹配用户界面上处于选中状态的元素E。<br/>(用于input type为radio与checkbox时)	 | CSS3		 |
+| E:enabled				 | 匹配用户界面上处于可用状态的元素E。											 | CSS3		 |
+| E:disabled			 | 匹配用户界面上处于禁用状态的元素E。											 | CSS3		 |
+| E:target				 | 匹配相关URL指向的E元素。														 | CSS3		 |
+
+# 动态伪类选择器
+
+|  选择器   |                   类型                    | 功能描述                       |
+| :-------: | :---------------------------------------: | :----------------------------- |
+|  E:link   |     [链接伪类选择器](#链接伪类选择器)     | E 元素被定义超链接并未被访问过 |
+| E:visited |     [链接伪类选择器](#链接伪类选择器)     | E 元素被定义超链接并已被访问过 |
+| E:active  | [用户行为伪类选择器](#用户行为伪类选择器) | E 元素被激活，常用于锚点和按钮 |
+|  E:hover  | [用户行为伪类选择器](#用户行为伪类选择器) | 鼠标停留在 E 元素              |
+|  E:focus  | [用户行为伪类选择器](#用户行为伪类选择器) | E 元素获取焦点                 |
+
+## 链接伪类选择器
+
+- 简介
+
+  根据具有链接属性的 E 元素的被访问情况进行匹配。
+
+- 例子
+
+  - index.html
+
+    ```html
+    <a href="http://.cn">广州</a>
+    ```
+
+  - index.css
+
+    ```css
+    a:link {
+      color: #f00;
+    }
+
+    a:visited {
+      color: #0ff;
+    }
+    ```
+
+
+## 用户行为伪类选择器
+
+- 简介
+
+  根据用户对于 E 元素的操作来进行匹配。
+
+- 例子
+
+  - index.html
+
+    ```html
+    <a href="http://.cn">广州</a> <input name="" />
+    ```
+
+  - index.css
+
+    ```css
+    a:hover {
+        color: black;
+    }
+
+    a:active {
+        color: yellow;
+    }
+
+    input:focus {
+      backgroud-color: #ccc;
+    }
+    ```
+
+- a 标签伪类设置顺序
+
+    a标签的伪类设置顺序一般按照l-v-h-a,lvha 规则是由于CSS特殊性导致，**css特殊性有一个按顺序的规则（同一条css规则，后出现会覆盖前面的同样规则）**，
+    
+    根据用户体验，active伪类样式应该在最后，hover伪类样式是不管链接是否被访问过，在鼠标移过的时候hover样式都应该展示，
+    
+    所以放在link和visited后面（第三的位置）。我们还需要去区分点击过和未被点击过的链接样式，所以visited伪类样式放在link后面（第二的位置）。
+
+  - index.html
+
+    ```html
+    <a href="http://www.baidu.com">百度</a>
+    ```
+  - index.css
+
+    ```css
+    a:link {
+        color: blue;
+    }
+
+    a:visited {
+        color: red;
+    }
+
+    a:hover {
+        color: black;
+    }
+
+    a:active {
+        color: yellow;
+    }
+    ```
+ <iframe height="450" style="width: 100%;" scrolling="no" title="css 动态伪类选择器" src="https://codepen.io/347830076/embed/GRZvarM?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/GRZvarM'>css 动态伪类选择器</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+  </iframe>   
+
+# 目标伪类选择器
+
+| 选择器  | 功能描述 |
+| :-----: | :------- |
+| :target | 页内锚点 |
+
+- 简介
+  目标伪类选择器是动态选择器，匹配只有存在 URL 指向的 E 元素，注意这里的 URL 是指向本页面的元素，常用于做手风琴效果。
+- 例子
+
+  - index.html
+
+    ```html
+    <p><a href="#news1">跳转至内容 1</a></p>
+    <p><a href="#news2">跳转至内容 2</a></p>
+    <p id="news1"><b>内容 1...</b></p>
+    <p id="news2"><b>内容 2...</b></p>
+    ```
+
+  - index.css
+
+    ```css
+    :target {
+      border: 2px solid #d4d4d4;
+      background-color: #e5eecc;
+    }
+    ```
+
+<iframe height="700" style="width: 100%;" scrolling="no" title="css 目标伪类选择器" src="https://codepen.io/347830076/embed/XWdeXGO?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/XWdeXGO'>css 目标伪类选择器</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# 语言伪类选择器
+
+| 选择器          | 功能描述	      |
+| :-------------: | :---------------- |
+| :lang(language) |  语言编码匹配元素 |
+
+* 简介
+    
+    语言伪类选择器是根据元素的语言编码匹配元素。
+    
+* 例子
+
+    * index.html
+    
+        ```html
+        <p lang="en-US">广州</p>
+        <p lang="fr">广州</p>
+        ```
+        
+    * index.css
+    
+        ```css
+        :lang(en-US){
+            color: #ff000;
+        }
+  
+        :lang(fr){
+            color: #0000ff;
+        }
+        ```
+<iframe height="400" style="width: 100%;" scrolling="no" title="css 语言伪类选择器" src="https://codepen.io/347830076/embed/PoNJZvm?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/PoNJZvm'>css 语言伪类选择器</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# UI元素状态伪类选择器
+
+| 选择器     | 类型		            | 功能描述	    |
+| :--------: | :------------------: | :------------ |
+| E:checked  | 选中状态伪类选择器   | 按钮表单元素	|
+| E:enabled  | 启用状态伪类选择器   | 启用表单元素	|
+| E:disabled | 不可用状态伪类选择器 | 禁用表单元素	|
+
+* 简介
+    
+    UI元素状态伪类选择器针对表单元素。
+    
+* 例子
+
+    * index.html
+    
+        ```html
+        <form action="">
+          <input>
+          <input disabled>
+          <input type="radio" name="sex" value="man">
+          <input type="radio" name="sex" value="female">
+        </form>
+        ```
+        
+    * index.css
+    
+        ```css
+        input:enabled{
+          background:#ffff00;
+        }
+  
+        input:disabled{
+          cursor: no-drop;
+          background:#ccc;
+        }
+  
+        input:checked{
+          width: 50px;
+          height: 50px;
+        }
+        ```
+<iframe height="450" style="width: 100%;" scrolling="no" title="css UI元素状态伪类选择器" src="https://codepen.io/347830076/embed/XWdedbw?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/XWdedbw'>css UI元素状态伪类选择器</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# 结构伪类选择器
+
+| 选择器                | 功能描述	                          |
+| :-------------------: | :---------------------------------- |
+| E:first-child         | 指定只有当E元素是其父级的第一个子级的样式。              |
+| E:last-child          | 选择每个E元素是其父级的最后一个子级。            	  |
+| E:first-of-type       | 选择每个E元素是其父级的第一个E元素                         |
+| E:last-of-type        | 选择每个E元素是其父级的最后一个E元素                     |
+| E F:nth-child(n)      | 选择每个E元素是其父级的第n个子元素            |
+| E F:nth-last-child(n) | 选择每个E元素的是其父级的第n个子元素，从最后一个子项计数         |
+| E:nth-of-type(n)      | 选择第n个E元素                          |
+| E:nth-last-of-type(n) | 选择倒数第n个E元素                      |
+| E:only-child          | 选择每个E元素是其父级的唯一子元素      |
+| E:only-of-type        | 选择每个E元素是其父级的唯一E元素 |
+| E:root                | E元素的所在文档的根节点	          |
+| E:empty               | E元素没有任何子元素和任何文本节点   |
+
+### 注意
+
+    * `E F:nth-of-child(n)`,`E F:nth-last-child(n)`,`E:nth-of-type(n)`,`E:nth-last-of-type(n)`的n可以填入数字、倍数、odd(单数)、even(双数)
+    
+    * `E:empty`换行符也属于文本节点
+    
+* 例子一
+
+    * index.html
+    
+        ```html
+        <ul>
+        	<div>div</div>
+          <li>test1</li>
+          <li>test2</li>
+          <li>test3</li>
+          <li>test4</li>
+          <li>test5</li>
+          <div>div</div>
+        </ul>
+        ```
+        
+    * index.css
+    
+        ```css
+        ul div:first-child {
+          color: green;
+        }
+
+        ul li:last-child {
+          color: yellow;
+        }
+
+        ul li:first-of-type {
+          color: red;
+        }
+
+        ul li:last-of-type {
+          color: blue
+        }
+        ```
+<iframe height="500" style="width: 100%;" scrolling="no" title="css 结构伪类选择器" src="https://codepen.io/347830076/embed/VwaMamm?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/VwaMamm'>css 结构伪类选择器</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+* 例子二
+
+    * index.html
+    
+        ```html
+        <ul>
+            <li>test1</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test4</li>
+            <li>test5</li>
+            <li>test6</li>
+            <p>test7</p>
+            <p>test8</p>
+            <p>test9</p>
+            <p>test10</p>
+            <p>test11</p>
+        </ul>
+        ```
+        
+    * index.css
+    
+        ```css
+        ul li:nth-child(1) {
+        	color: green;
+        }
+        
+        ul li:nth-last-child(1) {
+        	color: yellow;
+        }
+        
+        ul li:nth-of-type(2) {
+        	color: red;
+        }
+        
+        ul li:nth-last-of-type(2) {
+        	color: blue
+        }
+        ```
+<iframe height="600" style="width: 100%;" scrolling="no" title="css 结构伪类选择器2" src="https://codepen.io/347830076/embed/MWyEyOd?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/MWyEyOd'>css 结构伪类选择器2</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+```html
+<p></p>
+<p>A paragraph.</p>
+<p>Another paragraph.</p>
+
+<div>
+    <p>This is a paragraph.</p>
+</div>
+
+<div><span>This is a span.</span>
+    <p>This is a paragraph.</p>
+</div>
+
+<p><b>注意:</b> Internet Explorer 8以及更早版本的浏览器不支持 :only-child选择器.</p>
+
+<div>
+    <h1>This is a title.</h1><i></i>
+</div>
+
+<div>
+    <h1>This is a title.</h1>
+    <h1>This is a title.</h1>
+</div>
+```
+
+```css
+:root {
+      background: #ccc;
+  }
+
+  p:empty {
+      width: 100px;
+      height: 20px;
+      background: #ff0000;
+  }
+
+  p:only-child {
+      background: #ff0000;
+  }
+
+  h1:only-of-type {
+      background: #ff0000;
+  }
+```
+<iframe height="700" style="width: 100%;" scrolling="no" title="css 结构伪类选择器3" src="https://codepen.io/347830076/embed/NWNaNJo?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/NWNaNJo'>css 结构伪类选择器3</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# 否定伪类选择器
+
+| 选择器  | 功能描述                |
+| :-----: | :---------------------- |
+| :not(E) | 除了E元素之外的兄弟元素 |
+
+* 简介
+    
+    否定伪类选择器是排除目标元素之外的其他元素。
+    
+* 例子
+
+    * index.html
+    
+        ```html
+        <h1>这是一个标题</h1>
+
+        <p>这是一个段落.</p>
+        <p>这是另一个段落.</p>
+
+        <div>这是div元素的一些文本。</div>
+        ```
+        
+    * index.css
+    
+        ```css
+        p {
+            color: #000000;
+        }
+        :not(p) {
+            color: #f00;
+        }
+        ```
+<iframe height="450" style="width: 100%;" scrolling="no" title="css 否定伪类选择器" src="https://codepen.io/347830076/embed/PoNJNMd?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/347830076/pen/PoNJNMd'>css 否定伪类选择器</a> by cylyiou
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+
+
