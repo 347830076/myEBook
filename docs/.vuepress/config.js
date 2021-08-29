@@ -131,6 +131,8 @@ module.exports = {
                 sidebarDepth: 1,    // 可选的, 默认值是 1
                 children: [
                     '/css/1-语法与引用',
+                    '/css/2-背景',
+                    '/css/3-文字样式',
                 ]
             },
 
