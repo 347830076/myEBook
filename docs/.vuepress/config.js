@@ -3,7 +3,7 @@ const moment = require('moment')
 moment.locale('zh-cn')
 
 module.exports = {
-    base: '/myEbooy/',
+    base: '/myEbook',
     title: '阿离王带你零基础学习前端',
     description: '阿离王带你零基础学习前端',
     dest: 'dist',
@@ -50,6 +50,16 @@ module.exports = {
             {
                 transformer: (timestamp) => {
                     return moment(timestamp).format('LLLL')
+                }
+            }
+        ],
+        [
+            '@vuepress/pwa',
+            {
+                serviceWorker: true,
+                updatePopup: {
+                    message: "发现新内容可用",
+                    buttonText: "刷新"
                 }
             }
         ]
