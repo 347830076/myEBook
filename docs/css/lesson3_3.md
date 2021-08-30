@@ -1,11 +1,3 @@
-<!--
- * @Author: yu
- * @Date: 2020-08-15 16:05:12
- * @LastEditTime: 2020-09-02 12:07:15
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \new__book\css\docs\lesson\lesson3_3.md
--->
 # 伪类选择器
 
 | 选择符				 | 描述																			 | 版本		 |

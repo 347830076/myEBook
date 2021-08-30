@@ -55,9 +55,6 @@
         }
         ```
         
-    * 运行效果
-        
-        ![群组选择器](../../static/images/melon.jpg)
     
 * 例子二
 
@@ -98,8 +95,5 @@
         	color: #000fff
         }
         ```
-        
-    * 运行效果
-        
-        ![群组选择器](../../static/images/melon.jpg)
+
     

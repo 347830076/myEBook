@@ -26,5 +26,4 @@
     }
     ```
 
-  - 运行效果
-    ![群组选择器](../static/images/melon.jpg)
+
