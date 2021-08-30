@@ -10,7 +10,7 @@
 
 写页面的时候，建立一个style.css , 把下面的css代码复制到style.css文件即可， 在页面通过引用css文件就可以了。
 
-```css
+```cs
 html,
 body {
 	font-family: sans-serif, PingFangSC-Regular, "Noto Sans CJK SC", "Source Han Sans CN", Heiti, Heiti SC, DroidSans, DroidSansFallback, Arial, "Microsoft YaHei";

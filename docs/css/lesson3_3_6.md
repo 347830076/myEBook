@@ -20,7 +20,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         p:not(:first-child){
             color: #ff000;
         }

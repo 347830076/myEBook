@@ -19,7 +19,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     :target {
       border: 2px solid #d4d4d4;
       background-color: #e5eecc;

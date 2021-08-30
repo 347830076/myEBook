@@ -19,7 +19,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         :lang(en-US){
             color: #ff000;
         }

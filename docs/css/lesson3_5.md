@@ -24,7 +24,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     [class] {
       color: #c82829;
     }
@@ -56,7 +56,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     p[class|='start'] {
       color: red;
     }
@@ -81,7 +81,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     p[class~='str'] {
       font-size: 26px;
     }
@@ -110,7 +110,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     p[class^='start'] {
       color: #c82829;
     }

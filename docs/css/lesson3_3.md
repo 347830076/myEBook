@@ -60,7 +60,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     a:link {
       color: #f00;
     }
@@ -87,7 +87,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     a:hover {
         color: black;
     }
@@ -116,7 +116,7 @@
     ```
   - index.css
 
-    ```css
+    ```cs
     a:link {
         color: blue;
     }
@@ -159,7 +159,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     :target {
       border: 2px solid #d4d4d4;
       background-color: #e5eecc;
@@ -192,7 +192,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         :lang(en-US){
             color: #ff000;
         }
@@ -233,7 +233,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         input:enabled{
           background:#ffff00;
         }
@@ -294,7 +294,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         ul div:first-child {
           color: green;
         }
@@ -338,7 +338,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         ul li:nth-child(1) {
         	color: green;
         }
@@ -385,7 +385,7 @@
 </div>
 ```
 
-```css
+```cs
 :root {
       background: #ccc;
   }
@@ -434,7 +434,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         p {
             color: #000000;
         }

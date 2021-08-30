@@ -48,7 +48,7 @@
 
 ![css属性前缀](../static/images/css/lesson24/hack.png)
 
-```css
+```cs
 /*在不同IE版本显示不同文本颜色*/
 
 .test {
@@ -63,7 +63,7 @@
 - `*html` `*`前缀只对 IE6 生效
 - `*+html` `*+`前缀会对 IE7 生效
 
-```css
+```cs
 * html .test {
   color: #090;
 } /* For IE6 and earlier */
@@ -143,7 +143,7 @@ table {
 
 **当出现连续浮动的元素，携带与浮动方向相同的 margin 时，队首的元素，会双倍 marign。**
 
-```css
+```cs
 <ul>
   <li></li>
   <li></li>
@@ -157,7 +157,7 @@ table {
 
 **使浮动的方向和 margin 的方向，相反。**
 
-```css
+```cs
 float: left;
 margin-right: 40px;
 ```
@@ -180,7 +180,7 @@ ul li.no1 {
 
 #### 解决方案
 
-```css
+```cs
 <div style="height:2px;overflow:hidden;background:#000000;width:778px;"></div>
 
 <div style="height:2px;font-size:2px;background:#000000;width:778px;">&nbps;</div>

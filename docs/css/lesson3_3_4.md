@@ -25,7 +25,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         input:enabled{
           background:#ffff00;
         }

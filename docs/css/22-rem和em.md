@@ -14,7 +14,7 @@
 </p>
 ```
 
-```css
+```cs
 .text {
   font-size: 16px;
   text-indent: 2em;
@@ -42,7 +42,7 @@
 </div>
 ```
 
-```css
+```cs
 html {
   font-size: 18px;
 }
@@ -105,7 +105,7 @@ html {
 
 ### CSS 语法
 
-```css
+```cs
 @media mediatype and|not|only (media feature) {
     CSS-Code;
 }
@@ -113,7 +113,7 @@ html {
 
 你也可以针对不同的媒体使用不同 stylesheets :
 
-```css
+```cs
 <link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css">
 ```
 
@@ -165,7 +165,7 @@ html {
 |scan	|定义电视类设备的扫描工序。|
 |width	|定义输出设备中的页面可见区域宽度。|
 
-```css
+```cs
 /* 最大宽度320px, 意思是小于320的屏幕则引入m320.css这个css文件 */
 <link rel="stylesheet" type="text/css" href="m320.css" media="only screen and (max-width:320px)"/>
 /* 最小宽度321px,最大375px, 意思是大于320px和小于375px的屏幕则引入m375.css这个css文件 */

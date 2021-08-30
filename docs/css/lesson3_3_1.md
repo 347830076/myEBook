@@ -24,7 +24,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     a:link {
       color: #f00;
     }
@@ -51,7 +51,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     a:hover {
         color: black;
     }
@@ -80,7 +80,7 @@
     ```
   - index.css
 
-    ```css
+    ```cs
     a:link {
         color: blue;
     }

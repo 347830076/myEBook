@@ -25,7 +25,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 通常会使用透明的 border 模拟出一个三角形：
 
-```css
+```cs
 .traingle {
   width: 0;
   height: 0;
@@ -39,7 +39,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 《CSS Secret》里面的方法，采用多重线性渐变实现切角
 
-```css
+```cs
 .notching {
   width: 40px;
   height: 40px;
@@ -60,7 +60,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 利用伪元素加旋转透视实现梯形：
 
-```css
+```cs
 .trapezoid {
   position: relative;
   width: 60px;
@@ -82,7 +82,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 当然，还有另一种更简单的方法是利用 border 实现，借助上面的构造三角形的方法，在矩形两侧构造两个透明的三角形：
 
-```css
+```cs
 .trapezoid {
   position: relative;
   width: 60px;
@@ -96,7 +96,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 梯形加上三角形，很容易就组合成一个五边形，这里需要借助一个伪元素实现：
 
-```css
+```cs
 .pentagon {
   position: relative;
   width: 60px;
@@ -120,7 +120,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 看看上面的梯形，如果两个反方向且底边同样大小的梯形，叠加在一起，是不是就能得到一个六边形呢？
 
-```css
+```cs
 .pentagon {
   position: relative;
   width: 60px;
@@ -145,7 +145,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 六边形都解决了，八边形也不在话下，一个矩形加上两个梯形，可以合成一个八边形。
 
-```css
+```cs
 .octagon {
   position: relative;
   width: 40px;
@@ -178,7 +178,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 使用 3 个三角形叠加旋转在一起实现
 
-```css
+```cs
 .star {
   margin: 50px 0;
   position: relative;
@@ -214,7 +214,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 六角星呢？想象一下，一个向上的三角形 ▲，叠加上一个向下的三角形 ▼，就可以得到一个六边形：
 
-```css
+```cs
 .sixstar {
   position: relative;
   width: 0;
@@ -237,7 +237,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 八角星呢？八个角那么多呢。其实使用两个矩形进行旋转拼接就可以了。
 
-```css
+```cs
 .eightstar {
   position: relative;
   width: 100px;
@@ -262,7 +262,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 好。最后多角星再来一个十二级角星。在八角星的基础上，再增加一个矩形，就能得到十二角啦。也就是要过第一个伪元素。
 
-```css
+```cs
 .twelvestar {
   position: relative;
   width: 100px;
@@ -301,7 +301,7 @@ CSS3 出来后，我们有了更广阔的施展空间，通过
 
 这里使用 border 画一个蛋的形状：
 
-```css
+```cs
 .ellipse {
   width: 120px;
   height: 160px;
@@ -327,7 +327,7 @@ clip-path 通过定义特殊的路径，实现我们想要的图形。而这个�
 
 **看看它的 API：**
 
-```css
+```cs
 {
 /* Keyword values */
 clip-path: none;
@@ -373,7 +373,7 @@ clip-path: unset;
 
 下面分别列举使用 clip-path 生成一个圆形和一个十边形。
 
-```css
+```cs
 /* 圆形 */
 .circle {
   width: 100px;

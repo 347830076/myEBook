@@ -46,7 +46,7 @@
 <div></div>
 ```
 
-```css
+```cs
 div {
   width: 100px;
   height: 100px;
@@ -68,7 +68,7 @@ div {
 </div>
 ```
 
-```css
+```cs
 div {
   overflow: hidden;
 }

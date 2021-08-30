@@ -31,7 +31,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     p::first-letter {
       font-size: 3em;
       font-weight: bold;
@@ -69,7 +69,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     p{
         position: relative;
         padding: 30px 0;
@@ -103,7 +103,7 @@
 
   - index.css
 
-    ```css
+    ```cs
     input::-webkit-input-placeholder {
       color: red;
     }

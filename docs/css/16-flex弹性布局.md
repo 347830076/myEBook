@@ -60,7 +60,7 @@
 
 ## Flex容器
 
-```css
+```cs
 display:flex;
 ```
 
@@ -100,7 +100,7 @@ display:flex;
 - `flex-direction:column;`从上到下排列。
 - `flex-direction:column-reverse;`从下到上排列。 以上只针对ltr书写方式，对于rtl正好相反了。
 
-```css
+```cs
 flex-direction:row;
 ```
 
@@ -116,7 +116,7 @@ flex-direction:row;
 - flex-wrap:wrap;伸缩容器多行显示；伸缩项目每一行的排列顺序由上到下依次。
 - flex-wrap:wrap-reverse;伸缩容器多行显示，但是伸缩项目每一行的排列顺序由下到上依次排列。
 
-```css
+```cs
 flex-warp: wrap;
 ```
 
@@ -245,7 +245,7 @@ flex-flow: [`flex-direction`] [`flex-wrap`]; 默认值为row nowrap
 
 `flex`属性可以用来指定可伸缩长度的部件，是`flex-grow（放大比例）`,`flow-shrink（收缩比例）`,`flex-basis（伸缩基准值）`这个三个属性的缩写写法，建议大家采用缩写的方式而不是单独来使用这3个属性。
 
-```css
+```cs
 flex:none | [ <'flex-grow'> ?<'flew-shrink'> || <'flow-basis'>]
 ```
 `flex-grow`是必须的  `flex-shrink`和`flow-basis`是可选的

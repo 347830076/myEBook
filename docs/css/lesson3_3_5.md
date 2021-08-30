@@ -37,7 +37,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         ul:first-child {
         	color: #00ff00;
         }
@@ -81,7 +81,7 @@
         
     * index.css
     
-        ```css
+        ```cs
         ul li:nth-child(2) {
         	color: #718c00;
         }
