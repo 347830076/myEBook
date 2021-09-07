@@ -47,7 +47,7 @@ html, body,ul{
         <div class="title">欢迎来到前端学习营</div>
         <div class="desc">热爱前端，热爱分享</div>
         <div>
-          <a href="/myEBook/html/">
+          <a href="/html/">
             <el-button type="primary" size="medium" icon="el-icon-right" class="btn">开始学习</el-button>
           </a>
         </div>
