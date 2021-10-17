@@ -14,6 +14,19 @@ module.exports = {
         ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js' }],
         ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
         ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
+        [
+            'script', {},
+            `
+                // 百度统计
+                var _hmt = _hmt || [];
+                (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?1b4bdcd9c0d2ea4f6317f749faf6b20e";
+                var s = document.getElementsByTagName("script")[0]; 
+                s.parentNode.insertBefore(hm, s);
+                })();
+            `
+        ]
     ],
     plugins: [
         // 代码实时展示效果
