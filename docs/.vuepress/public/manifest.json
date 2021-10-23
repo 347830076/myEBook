@@ -7,7 +7,7 @@
     "start_url": "/index.html",
     "icons": [
         {
-            "src": "/icons/lufei.jpg",
+            "src": "/logo.jpg",
             "sizes": "255x255",
             "type": "image/jpg"
         }
