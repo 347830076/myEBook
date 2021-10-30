@@ -5,11 +5,14 @@
     .code-copy{
       height: 0px;
     }
-    .theme-default-content code{
+    .theme-default-content code, .red{
       color: #ea4335;
     }
     p, ul, ol{
       line-height: 1.5;
+    }
+    .vuepress-plugin-demo-block__wrapper .vuepress-plugin-demo-block__display{
+      padding: 0;
     }
 </style>
 <template>

@@ -98,6 +98,7 @@ module.exports = {
         nav: [
             { text: '首页', link: '/' },
             { text: 'B站视频', link: 'https://space.bilibili.com/666922383' },
+            { text: '我的博客', link: 'https://347830076.github.io/myBlog/' },
             // {
             //     text: '更多功能',
             //     items: [
