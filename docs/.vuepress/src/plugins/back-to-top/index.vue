@@ -3,7 +3,7 @@
   position: fixed;
   width: 60px;
   height: 80px;
-  right: 40px;
+  right: 2vw;
   bottom: 40px;
   border-radius: 50%;
   cursor: pointer;
@@ -83,9 +83,11 @@
 }
 .diglett {
   top: auto;
-  right: -10px;
+  right: 0;
   bottom: 0;
-  width: 80px;
+  width: 5vw;
+  min-width: 30px;
+  max-width: 60px;
   z-index: 0;
   transition: all .2s linear;
 }
