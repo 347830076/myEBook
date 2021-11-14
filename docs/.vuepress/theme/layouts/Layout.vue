@@ -12,7 +12,7 @@
       line-height: 1.5;
     }
     .vuepress-plugin-demo-block__wrapper .vuepress-plugin-demo-block__display{
-      padding: 0;
+      padding: 0 !important;
     }
 </style>
 <template>
