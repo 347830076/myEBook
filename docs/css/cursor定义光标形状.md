@@ -53,6 +53,8 @@ html{
 }
 ```
 
+上面的`auto`呢，是当没有找到url自定义光标地址时，或者这个地址的图片不能显示的时候，就使用第二个参数 `auto` 来显示光标的形状
+
 <div style="cursor: url('http://ebook.wanggege.cn/assets/img/hot.a7dac470.svg'), auto;">
   svg图片，可以右键复制链接 <img src="./img/hot.svg" class="zoom-custom-imgs" />
 </div>
