@@ -41,7 +41,7 @@ cursor属性定义了鼠标指针放在一个元素边界范围内时所用的�
   (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### 自定义鼠标显示图标，需注意下面几个问题
+### 自定义鼠标光标的形状，需注意下面几个问题
 
 - 一般将图片存为cur或ico或svg格式比较好
 - 图片地址为绝对路径，
