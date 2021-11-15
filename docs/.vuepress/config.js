@@ -162,6 +162,7 @@ module.exports = {
                     '/css/6-边距',
                     '/css/7-盒子模型',
                     '/css/8-定位',
+                    '/css/cursor定义光标形状',
                     '/css/9-显示隐藏',
                     '/css/10-浮动',
                     '/css/11-bfc',
