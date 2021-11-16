@@ -24,7 +24,7 @@
 
   - index.css
 
-    ```cs
+    ```
     a:link {
       color: #f00;
     }
@@ -33,7 +33,7 @@
       color: #0ff;
     }
     ```
-</iframe>   
+
 
 ## 用户行为伪类选择器
 
@@ -99,4 +99,4 @@
     ```
  <iframe height="450" style="width: 100%;" scrolling="no" title="css 动态伪类选择器" src="https://codepen.io/347830076/embed/GRZvarM?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/347830076/pen/GRZvarM'>css 动态伪类选择器</a> by cylyiou
-  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
+  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
