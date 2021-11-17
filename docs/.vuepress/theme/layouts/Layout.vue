@@ -7,6 +7,16 @@
     }
     .theme-default-content code, .red{
       color: #ea4335;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: transparent;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .theme-default-content pre[class*="language-"] code{
+      font-weight: normal;
+      font-size: 14px;
+      font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
     }
     p, ul, ol{
       line-height: 1.5;
