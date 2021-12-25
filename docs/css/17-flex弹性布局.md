@@ -56,7 +56,7 @@
 
 其实Flexbox的优秀特性并不是这一些，首先来一张它的属性图吧~
 
-![flex](../assets/flex1.jpg)
+<img src="./img/flex1.jpg" class="zoom-custom-imgs" />
 
 ## Flex容器
 
@@ -68,7 +68,7 @@ display:flex;
 
 当我们使用flexbox布局时候，需要先给父容器的display值定位`flex`（块级）或者`inline-flex`（行内级）。
 
-![flex2](../assets/fl2.png)
+<img src="./img/fl2.png" class="zoom-custom-imgs" />
 
 容器默认存在两根轴：水平的主轴（`main axis`）和垂直的交叉轴（`cross axis`）。主轴的开始位置（与边框的交叉点）叫做`main start`，结束位置叫做`main end`；交叉轴的开始位置叫做`cross start`，结束位置叫做`cross end`。
 
@@ -106,7 +106,7 @@ flex-direction:row;
 
 网页展示效果如下：
 
-![flex](../assets/flex.jpg)
+<img src="./img/flex.jpg" class="zoom-custom-imgs" />
 
 ### flex-warp
 
@@ -122,7 +122,7 @@ flex-warp: wrap;
 
 网页效果见图；
 
-![flex](../assets/fl3.jpg)
+<img src="./img/fl3.jpg" class="zoom-custom-imgs" />
 
 ### flex-flow
 
@@ -141,7 +141,7 @@ flex-flow: [`flex-direction`] [`flex-wrap`]; 默认值为row nowrap
 
 <p>网页效果如下：</p>
 
-![flex](../assets/fl4.jpg)
+<img src="./img/fl4.jpg" class="zoom-custom-imgs" />
 
 <p>这里大家可以多自己去试试不同的组合。</p>
 
@@ -163,9 +163,9 @@ flex-flow: [`flex-direction`] [`flex-wrap`]; 默认值为row nowrap
 
 <p>还是看demo理解起来快一点：</p>
 
-![flex](../assets/fl5.jpg)
+<img src="./img/fl5.jpg" class="zoom-custom-imgs" />
 
-![flex](../assets/fl6.jpg)
+<img src="./img/fl6.jpg" class="zoom-custom-imgs" />
 
 
 ### align-items
@@ -184,7 +184,8 @@ flex-flow: [`flex-direction`] [`flex-wrap`]; 默认值为row nowrap
 
 - 下面demo只展示center和stretch的栗子，其他几个可以参考flex-start和flex-end那样。</p>
 
-![flex](../assets/fl7.png)
+<img src="./img/fl7.png" class="zoom-custom-imgs" />
+
 
 ### align-content
 
@@ -199,8 +200,7 @@ flex-flow: [`flex-direction`] [`flex-wrap`]; 默认值为row nowrap
 其他可以参考`justify-content`用法。
 
 
-![flex](../assets/fl8.png)
-
+<img src="./img/fl8.png" class="zoom-custom-imgs" />
 
 
 ## Flex项目 (子元素的属性)
@@ -299,7 +299,7 @@ flex:none | [ <'flex-grow'> ?<'flew-shrink'> || <'flow-basis'>]
 <p>具体大家可以见这个网站：caniuse（http://caniuse.com/#search=flexbox）</p>
 
 
-![flex](../assets/fl9.jpg)
+<img src="./img/fl9.jpg" class="zoom-custom-imgs" />
 
 <p>在PC端其实很乐观了，基本上主流的浏览器都已经兼容了flex的使用，但是到了移动端就不是那么好了，特别是国内浏览器，考虑到uc浏览器占了大头，但是uc从图中看到只兼容flex最老的一个版本，也就是2009年的版本，即display:box;很多现在flex的优秀特性到了它上面都不兼容了，所以建议大家在使用的时候，假如2009版本可以满足开发要求的话，还是去使用2009版本，这样风险更小。</p>
 

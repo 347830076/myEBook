@@ -97,23 +97,22 @@ module.exports = {
         // 顶部路由
         nav: [
             { text: '首页', link: '/' },
+            {
+                text: '分类',
+                items: [
+                    {
+                        text: 'HTML',
+                        link: '/html/'
+                    },
+                    {
+                        text: 'CSS',
+                        link: '/css/'
+                    }
+                ]
+            },
             { text: 'B站视频', link: 'https://space.bilibili.com/666922383' },
             { text: '我的博客', link: 'https://347830076.github.io/myBlog/' },
-            // {
-            //     text: '更多功能',
-            //     items: [
-            //         {
-            //             text: '分组一', items: [
-            //                 { text: 'css', link: '/css/' },
-            //             ]
-            //         },
-            //         {
-            //             text: '分组二', items: [
-            //                 { text: '工具类', link: '/tool/' },
-            //             ]
-            //         }
-            //     ]
-            // },
+            
         ],
         // 侧边栏路由
         sidebar: [
@@ -173,6 +172,16 @@ module.exports = {
                     '/css/12-显示隐藏',
                     '/css/13-浮动',
                     '/css/14-bfc',
+                    '/css/15-文本溢出处理',
+                    '/css/16-自适应图片技巧',
+                    '/css/17-flex弹性布局',
+                    '/css/18-grid网格布局',
+                    '/css/19-布局技巧',
+                    '/css/20-css函数',
+                    '/css/21-sass',
+                    '/css/22-转换',
+                    '/css/23-过渡动画',
+                    '/css/24-媒体查询',
                     
                 ]
             },

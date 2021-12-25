@@ -24,6 +24,9 @@
     .vuepress-plugin-demo-block__wrapper .vuepress-plugin-demo-block__display{
       padding: 0 !important;
     }
+    .zoom-custom-imgs{
+      margin: 10px 0;
+    }
 </style>
 <template>
   <div
