@@ -6,11 +6,11 @@
 
 [iconfont 图标库](https://www.iconfont.cn/)
 
-![登录](../static/images/css/lesson11/iconfont-register.png)
+<img src="./img/iconfont-register.png" class="zoom-custom-imgs" />
 
 ### 2.新建一个项目
 
-![新建项目](../static/images/css/lesson11/new.png)
+<img src="./img/new.png" class="zoom-custom-imgs" />
 
 ### 3.给项目添加图标
 
@@ -18,7 +18,7 @@
 2. 在购物车中将项目需要的图标添加到项目中。点击“添加至项目”
 3. 回到项目中，下载“font class”的文件到本地。
 
-![download](../static/images/css/lesson11/download.png)
+<img src="./img/download.png" class="zoom-custom-imgs" />
 
 ### 4.前端项目中使用 iconfont
 
@@ -26,4 +26,5 @@
 2. 在页面中引入 iconfont.css 文件。
 3. 创建一个 div 引入类名`<div class="iconfont iconjiqiren"></div>`,`iconfont`是固定的，`iconjiqiren`是想要的图标对应的类名。
 
-![类名](../static/images/css/lesson11/class.png)
+<img src="./img/class.png" class="zoom-custom-imgs" />
+
