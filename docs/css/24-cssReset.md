@@ -4,7 +4,7 @@
 
 虽然大部分相同，但也有很多样式是不一致的，如搜索输入框
 
-!['cssReset'](../assets/input.png)
+<img src="./img/input.png" class="zoom-custom-imgs" />
 
 所以我们需要reset css处理，统一不同浏览器差异确认团队开发的起始标准，弥补浏览器的‘缺点’。
 
