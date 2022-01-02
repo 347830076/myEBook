@@ -1,6 +1,6 @@
 # BFC
 
-## 1.常见定位方案
+<!-- ## 1.常见定位方案
 
 ### 1.1 普通流(normal flow)
 
@@ -12,78 +12,59 @@
 
 ### 1.3 绝对定位(absolute positioning)
 
-> 在绝对定位布局中，元素会整体脱离普通流，因此绝对定位元素不会对其兄弟元素造成影响，而元素具体的位置由绝对定位的坐标决定。
+> 在绝对定位布局中，元素会整体脱离普通流，因此绝对定位元素不会对其兄弟元素造成影响，而元素具体的位置由绝对定位的坐标决定。 -->
 
-## 2.BFC 概念
+## 概念
 
-**Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。**
+<!-- **Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。** -->
 
 **块格式化上下文（block formatting context） 是 Web 页面的可视化 CSS 渲染出的一部分。它是块级盒布局出现的区域，也是浮动层元素进行交互的区域。**
 
-### 2.1 BFC(块格式化上下文)的布局规则
+### BFC(块格式化上下文)的布局规则
 
+- BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
 - 内部的 Box 会在垂直方向，一个接一个地放置。
 - Box 垂直方向的距离由 margin 决定。属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠。
 - 每个盒子（块盒与行盒）的 margin box 的左边，与包含块 border box 的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
 - BFC 的区域不会与 float box 重叠。
-- BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
 - 计算 BFC 的高度时，浮动元素也参与计算。
 
-### 2.2 如何创建 BFC
+### 如何创建 BFC
 
-- body 根元素
-- 浮动元素：float 除 none 以外的值
-- 绝对定位元素：position (absolute、fixed)
-- display 为 inline-block、table-cells、flex
-- overflow 除了 visible 以外的值 (hidden、auto、scroll)
+- 根元素 (`html`)
+- 浮动元素：(`float 除 none 以外的值`)
+- 绝对定位元素：`position (absolute、fixed)`
+- overflow `除了 visible 以外的值` (hidden、auto、scroll)
+- display 值为 `flow-root` 的元素
+- 弹性元素（display 为 `flex` 或 `inline-flex` 元素的直接子元素）
+- 网格元素（display 为 `grid` 或 `inline-grid` 元素的直接子元素）
+- 行内块元素（元素的 display 为 `inline-block`）
+- 表格单元格（元素的 display 为 `table-cell`，HTML表格单元格默认为该值）
+- 表格标题（元素的 display 为 `table-caption`，HTML表格标题默认为该值）
+- 表格元素（元素的 display 为 `table`、`table-row`、 `table-row-group`、`table-header-group`、`table-footer-group`（分别是 `table`、`row`、`tbody`、`thead`、`tfoot` 的默认属性）或 `inline-table`）
 
-### 2.3 BFC 特性的应用
 
-#### 2.3.1 同一个 BFC 下外边距会发生折叠
+## BFC 特性的应用
 
-```html
-<div></div>
-<div></div>
-```
+#### 1. 同一个 BFC 下，外边距会发生折叠
 
-```cs
-div {
-  width: 100px;
-  height: 100px;
-  background-color: skyblue;
-  margin: 100px;
-}
-```
+**由于两个 div 同处于同一个 BFC 容器下(html 元素)，所以第一个 div 的 margin-bottom 和第二个 div 的 margin-top 发生重叠。**
+<p></p>
+<iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/QWqmrKN?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/QWqmrKN">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-**由于两个 div 同处于同一个 BFC 容器下(body 元素)，所以第一个 div 的 margin-bottom 和第二个 div 的 margin-top 发生重叠。**
+**两个 div 都通过 `overflow: hidden`;开启了 BFC，所以两个 p 标签处于不同的 BFC 容器里面，就可以避免上下外边距重叠。**
 
----
+<iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/NWaYMpx?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/NWaYMpx">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-```html
-<div>
-  <p></p>
-</div>
-<div>
-  <p></p>
-</div>
-```
-
-```cs
-div {
-  overflow: hidden;
-}
-
-p {
-  width: 100px;
-  height: 100px;
-  background-color: skyblue;
-  margin: 100px;
-}
-```
-
-**两个 div 都通过 overflow: hidden;开启了 BFC，所以两个 p 标签处于不同的 BFC 容器里面，就可以避免上下外边距重叠。**
-
-#### 2.3.2 BFC 可以包含浮动元素(清除浮动)
+#### 2. BFC 可以包含浮动元素(清除浮动)
 
 **由于里面的 div 浮动脱离文档流，所以外面的容器只剩下 2px 的边框高度。**
 
@@ -110,7 +91,7 @@ p {
   (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-#### 2.3.3 BFC 可以阻止元素被浮动元素覆盖
+#### 3. BFC 可以阻止元素被浮动元素覆盖
 
 ```html
 <div style="height: 100px;width: 100px;float: left;background: lightblue">
