@@ -1,62 +1,73 @@
 # Flexbox 弹性布局
 
-<p>Flexbox，一种CSS3的布局模式，也叫做弹性盒子模型，用来为盒装模型提供最大的灵活性。首先举一个栗子，之前我们是这样实现一个div盒子水平垂直居中的。在知道对象高宽的情况下，对居中元素绝对百分比定位，然后通过margin偏移的方式来实现。</p>
+`Flexible Box 模型`，通常被称为 `flexbox`，是一种一维的布局模型。它给 `flexbox` 的`子元素`之间提供了强大的`空间分布`和`对齐`能力。
 
-```html
-<style>
-    .container{
-        width: 600px;
-        height: 400px;
-        border: 1px solid #000;
-        position: relative;
-    }
-    .box{
-        width: 200px;
-        height: 100px;
-        border: 1px solid #000;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -100px;
-        margin-top:-50px;
-    }
-</style>
-<div class="container">
-    <div class="box"></div>
-</div>
-```
+我们说 `flexbox` 是一种一维的布局，是因为一个 `flexbox` 一次只能处理一个维度上的元素布局，一行或者一列。作为对比的是另外一个二维布局 `CSS Grid Layout`，可以同时处理行和列上的布局。
 
-<p>假如使用了flex后，实现起来就简单了，而且不需要自己去算，也不需要绝对定位，只需要通过对伸缩容器定义两个属性，justify-content定义伸缩项目沿着主轴线的对齐方式为center， align-items定义伸缩项目在侧轴（垂直于主轴）的对齐方式为center，具体如下：</p>
+<!-- ## flexbox 的所有属性 -->
 
-```html
-<style>
-.flexCon{
-    width: 600px;
-    height: 400px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-}
-.flexBox{
-    width: 200px;  /*宽度可以为任意*/
-    height: 100px; /*高度可以为任意*/
-    border: 1px solid #000;
-}
-</style>
-<div class="flexCon">
-    <div class="flexBox"></div>
-</div>
-```
+<!-- - flex容器
+    - display
+        - flex
+    - flex-direction
+        - row
+        - row-reverse
+        - column
+        - column-reverse
+    - flex-wrap
+        - nowrap
+        - wrap
+        - wrap-reverse
+    - flex-flow (上面两属性的复合写法)
+        - [flexdirection] || [flex-warp]
+        - 默认： row  nowrap
+    - justify-content
+        - flex-start
+        - flex-end
+        - center
+        - space-between
+        - space-around
+    - align-items
+        - flex-start
+        - flex-end
+        - center
+        - baseline
+        - stretch
+    - align-content
+        - flex-start
+        - flex-end
+        - space-between
+        - space-around
+        - stretch
+- flex项目 子元素
+    - order
+        - [number]
+    - flex-grow
+        - [number] // 默认：0
+    - flex-shrink
+        - [number] // 默认：1
+    - flex-basis
+        - [length] || auto // 默认：auto
+    - flex (上面三个属性的复合写法)
+        - [flex-grow] [flex-shrink] [flex-basis]
+        - none: 
+        - 1 :
+    - align-self
+        - flex-start
+        - flex-end
+        - space-between
+        - space-around
+        - stretch
 
-<iframe height="700" style="width: 100%;" scrolling="no" title="css flex弹性布局" src="https://codepen.io/347830076/embed/qBZPQeK?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/347830076/pen/qBZPQeK'>css flex弹性布局</a> by cylyiou
-  (<a href='https://codepen.io/347830076'>@347830076</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+ -->
 
 其实Flexbox的优秀特性并不是这一些，首先来一张它的属性图吧~
 
 <img src="./img/flex1.jpg" class="zoom-custom-imgs" />
+
+## flexbox 的两根轴线
+
+当使用 `flex` 布局时，首先想到的是两根轴线 — `主轴`和`交叉轴`。主轴由 `flex-direction` 定义，另一根轴垂直于它。我们使用 `flexbox` 的所有属性都跟这两根轴线有关, 所以有必要在一开始首先理解它。
 
 ## Flex容器
 

@@ -25,9 +25,11 @@
     "vuepress-plugin-element-tabs": "^0.2.8"
   },
   "dependencies": {
+    "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
     "@vssue/api-github-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-demo-block": "^0.7.2"
+    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-markmap": "^0.2.0"
   }
 }

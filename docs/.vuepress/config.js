@@ -75,7 +75,11 @@ module.exports = {
                     buttonText: "刷新"
                 }
             }
-        ]
+        ],
+        // 在文章中加入思维导图
+        [
+            '@renovamen/vuepress-plugin-mermaid'
+        ] 
     ],
     themeConfig: {
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
@@ -182,7 +186,12 @@ module.exports = {
                     '/css/22-转换',
                     '/css/23-过渡动画',
                     '/css/24-媒体查询',
-                    
+                    '/css/24-媒体查询',
+                    '/css/25-iconfont',
+                    '/css/26-viewport',
+                    '/css/27-cssReset',
+                    '/css/28-精灵图',
+                    '/css/30-项目练习'
                 ]
             },
 
