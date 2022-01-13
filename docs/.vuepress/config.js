@@ -186,7 +186,6 @@ module.exports = {
                     '/css/22-转换',
                     '/css/23-过渡动画',
                     '/css/24-媒体查询',
-                    '/css/24-媒体查询',
                     '/css/25-iconfont',
                     '/css/26-viewport',
                     '/css/27-cssReset',
@@ -194,6 +193,14 @@ module.exports = {
                     '/css/30-项目练习'
                 ]
             },
+            {
+                title: 'javascript',
+                path: '/js/',
+                sidebarDepth: 1,
+                children: [
+                    '/js/1-语法结构'
+                ]
+            }
 
         ],
         lastUpdated: '更新时间', // string | boolean
