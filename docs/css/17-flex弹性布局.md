@@ -86,8 +86,7 @@ display: flex;
 
 - 元素排列为一行 (flex-direction 属性的初始值是 row)。
 - 元素从主轴的起始线开始。
-- 元素不会在主维度方向拉伸，但是可以缩小。
-- 元素被拉伸来填充交叉轴大小。
+- 元素不会在主维度方向拉伸，但是可以缩小。 (flex-grow: 0; flex-shrink: 1;)
 - flex-basis 属性为 auto。
 - flex-wrap 属性为 nowrap。
 
@@ -144,9 +143,9 @@ flex-direction:row;
 
 <img src="./img/flex.jpg" class="zoom-custom-imgs" />
 
-### flex-wrap (控制容器单行还是多行)
+### flex-wrap
 
-`flex-wrap`属性控制伸缩容器是单行还是多行，也决定了交叉轴方向。
+`flex-wrap`属性控制伸缩**容器是单行还是多行**，也决定了交叉轴方向。
 
 - flex-wrap: `nowrap`; 伸缩容器**单行显示** (默认值)；
 - flex-wrap: `wrap`;   伸缩容器**多行显示**；伸缩项目每一行的排列顺序由**上到下**依次排列。
@@ -160,7 +159,7 @@ flex-wrap: wrap;
 
 <img src="./img/fl3.jpg" class="zoom-custom-imgs" />
 
-### flex-flow (主轴和交叉轴复合写法)
+### flex-flow 
 
 `flex-flow` 属性为 **flex-direction**（主轴方向）和 **flex-wrap**（交叉轴方向）的缩写，两个属性决定了伸缩容器的主轴与交叉轴。
 
@@ -202,9 +201,9 @@ flex-flow: row-reverse wrap;
 
 <img src="./img/fl6.jpg" class="zoom-custom-imgs" />
 
-### align-items (项目在交叉轴的对齐方式)
+### align-items
 
-`align-items` 用来定义伸缩项目在交叉轴的对齐方式，这类似于**justify-content**属性，是交叉轴方向。
+`align-items` 用来定义伸缩**项目在交叉轴的对齐方式**，这类似于**justify-content**属性，是交叉轴方向。
 
 - `align-items: flex-start;` 伸缩项目在交叉轴起点边的外边距紧靠住该行在交叉轴起点的边。`(上对齐)`
 - `align-items: flex-end;`   伸缩项目在交叉轴终点边的外边距靠住该行在交叉轴终点的边。`(下对齐)`
@@ -217,7 +216,7 @@ flex-flow: row-reverse wrap;
 <img src="./img/fl7.png" class="zoom-custom-imgs" />
 
 **flex-directo** 和 **flex-wrap** 是一对，**justify-content** 和 **align-items** 是一对，前者分别定义主轴和交叉轴的方向，后者分别定义主轴和交叉轴中项目的对齐方式
-### align-content (伸缩行在伸缩容器里的对齐方式)
+### align-content
 
 `align-content` 属性用来定义`伸缩行在伸缩容器里的对齐方式`，这与调准伸缩项目在主轴上对齐方式的**justify-content**属性类似。只不过这里元素是以**一行为单位**。
 
@@ -240,10 +239,10 @@ flex-flow: row-reverse wrap;
 
 - [flex-grow (项目的放大比例)](#flex-grow )
 - [flex-shrink (项目的缩小比例)](#flex-shrink)
-- [flex-basis](#flex-basis)
+- [flex-basis (项目的大小)](#flex-basis)
 - [flex（flex-grow，flex-shrink，flex-basis的组合）](#flex)
-- [order](#order)
-- [align-self](#align-self)
+- [order (项目的排列顺序)](#order)
+- [align-self (项目上覆写align-item的对齐方式)](#align-self)
 
 ### flex-grow
 
@@ -268,8 +267,12 @@ flex-flow: row-reverse wrap;
 `flex` 属性是`flex-grow（放大比例）`,`flow-shrink（收缩比例）`,`flex-basis（伸缩基准值）`这个三个属性的缩写写法，建议大家采用缩写的方式而不是单独来使用这3个属性。
 
 ```css
-flex:none | [ <'flex-grow'> ?<'flew-shrink'> || <'flow-basis'>]
+flex: 0;
+flex: 1;
+flex: none; // (0 0 auto)
+flex: auto; // (1 1 auto)
 ```
+
 - `flex-grow` 是必须的  `flex-shrink` 和 `flow-basis` 是可选的
 - `flex-grow` 其中number作为**放大比例**，没有单位，初始值是0，主要用来决定伸缩容器剩余空间按比例应扩展多少空间。
 - `flex-shrink` 其中number作为**收缩比例**，没有单位，初始值是1，也就是 flex 项目元素仅在默认**宽度之和大于容器**的时候才会发生收缩
@@ -296,7 +299,7 @@ flex:none | [ <'flex-grow'> ?<'flew-shrink'> || <'flow-basis'>]
 
 ### align-self
 
-`align-self` 用来在单独的**伸缩项目上覆写默认的对齐方式**，这个属性是用来覆盖伸缩容器属性 `align-items` 对每一行的对齐方式。也就是说在默认的情况下这两个值是相等的。
+`align-self` 用来在单独的**伸缩项目上覆写align-item的对齐方式**，这个属性是用来覆盖伸缩容器属性 `align-items` 对每一行的对齐方式。也就是说在默认的情况下这两个值是相等的。
 
 - align-self: `auto`; （默认值） 设置为父元素的 align-items 值。
 - align-self: `flex-start`; flex 元素会对齐到 cross-axis 的首端。
