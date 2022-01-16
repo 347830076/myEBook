@@ -79,7 +79,10 @@ module.exports = {
         // 在文章中加入思维导图
         [
             '@renovamen/vuepress-plugin-mermaid'
-        ] 
+        ],
+        [
+            'vuepress-plugin-markmap'
+          ]
     ],
     themeConfig: {
         // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
