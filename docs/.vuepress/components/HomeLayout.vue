@@ -44,7 +44,7 @@ html, body,ul{
   <div class="login-container">
     <div class="layer">
       <div class="some-space">
-        <div class="title">欢迎来到前端学习营</div>
+        <div class="title">欢迎来到前端零基础学习营</div>
         <div class="desc">热爱前端，热爱分享</div>
         <div>
           <a href="/html/">

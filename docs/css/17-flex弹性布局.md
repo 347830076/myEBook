@@ -307,3 +307,13 @@ flex: auto; // (1 1 auto)
 - align-self: `center`;     flex 元素会对齐到 cross-axis 的中间，如果该元素的 cross-size 尺寸大于 flex 容器，将在两个方向均等溢出。
 - align-self: `baseline`; 基线对齐
 - align-self: `stretch`;  伸缩项目拉伸填充整个伸缩容器
+
+## 弹性布局实战练习
+
+### 画骰子
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/dyVrRKm?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/dyVrRKm">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

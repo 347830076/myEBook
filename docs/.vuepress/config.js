@@ -114,10 +114,14 @@ module.exports = {
                     {
                         text: 'CSS',
                         link: '/css/'
+                    },
+                    {
+                        text: 'JS',
+                        link: '/js/'
                     }
                 ]
             },
-            { text: 'B站视频', link: 'https://space.bilibili.com/666922383' },
+            { text: '电子书配套视频', link: 'https://space.bilibili.com/666922383' },
             { text: '我的博客', link: 'https://347830076.github.io/myBlog/' },
             
         ],
