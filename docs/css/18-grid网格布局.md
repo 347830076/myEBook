@@ -1,3 +1,6 @@
+---
+sidebarDepth: 2
+---
 # CSS Grid 网格布局教程
 
 ## 一、概述
@@ -101,6 +104,80 @@ div {
 容器指定了网格布局以后，接着就要划分行和列。
 - `grid-template-columns`属性定义每一列的列宽
 - `grid-template-rows`属性定义每一行的行高
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+```
+上面代码指定了一个**三行三列**的网格，列宽和行高都是**100px**。
+
+除了使用绝对单位，也可以使用百分比，或者其他单位
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+}
+```
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/rNYGoax?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/rNYGoax">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### repeat()
+
+有时候，重复写同样的值非常麻烦，尤其网格很多时。这时，可以使用repeat()函数，简化重复的值。上面的代码用repeat()改写如下。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: repeat(3, 33.33%);
+}
+```
+`repeat()` 接受两个参数，第一个参数是重复的次数（上例是 3），第二个参数是所要重复的值。
+
+`repeat()` 重复某种模式也是可以的。
+
+```css
+grid-template-columns: repeat(2, 100px 40px 80px);
+```
+
+**grid-template-columns: repeat(2, 100px 40px 80px);**，相对于 <b>grid-template-columns: 100px 40px 80px 100px 40px 80px;</b>
+
+第一列和第四列的宽度为100px，第二列和第五列为40px，第三列和第六列为80px。
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/JjOrwKJ?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/JjOrwKJ">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### auto-fill 关键字
+
+有时，单元格的大小是固定的，但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用`auto-fill`关键字表示自动填充，或`auto-fit`也是可以。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+}
+```
+
+上面代码表示**每列宽度100px**，然后自动填充，直到容器不能放置更多的列。
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/mdqBamz?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/mdqBamz">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
 
 
 
