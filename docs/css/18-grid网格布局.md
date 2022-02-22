@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2
+sidebarDepth: 3
 ---
 # CSS Grid 网格布局教程
 
@@ -178,8 +178,135 @@ grid-template-columns: repeat(2, 100px 40px 80px);
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
+#### fr 关键字
 
+为了方便表示比例关系，网格布局提供了`fr`关键字（fraction 的缩写，意为"片段"）。如果两列的宽度分别为1fr和2fr，就表示后者是前者的两倍。
 
+fr可以与绝对长度的单位结合使用，这时会非常方便。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 150px 1fr 2fr;
+}
+```
+上面代码表示，第一列的宽度为150像素，第二列的宽度是第三列的**一半**。
+
+<iframe height="370" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/podVGdX?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/podVGdX">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+#### minmax()
+
+`minmax()`函数产生一个长度范围，表示长度就在这个范围之中。它接受两个参数，分别为最小值和最大值。
+
+```css
+grid-template-columns: 1fr 1fr minmax(100px, 1fr);
+```
+
+上面代码中，minmax(100px, 1fr) 表示**列宽不小于100px，不大于1fr**。
+
+#### auto 关键字
+
+auto 关键字表示由浏览器自己决定长度。
+
+```css
+grid-template-columns: 100px auto 100px;
+```
+
+上面代码中，第一、三列的宽度固定，第二列自适应(剩余的宽度)
+
+### 网格线的名称
+
+`grid-template-columns` 属性和 `grid-template-rows` 属性里面，还可以使用方括号，指定每一根网格线的名字，方便以后的引用。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];
+  grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4];
+}
+```
+
+上面代码指定网格布局为 3行 x 3列，因此有 4 根垂直网格线和 4 根水平网格线。方括号里面依次是这八根线的名字。
+
+网格布局允许同一根线有多个名字，比如 [fifth-line row-5]。
+
+### 布局实例
+
+grid-template-columns 属性对于网页布局非常有用。两栏式布局只需要一行代码。
+
+```css
+.wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+```
+
+上面代码将左边栏设为70%，右边栏设为30%。
+
+传统的十二网格布局，写起来也很容易。
+
+```css
+grid-template-columns: repeat(12, 1fr);
+```
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/JjOvxgy?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/JjOvxgy">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### 3.3 grid-row-gap 属性，grid-column-gap 属性，grid-gap 属性
+
+- `grid-row-gap` 属性设置行与行的间隔（**行间距**）
+- `grid-column-gap` 属性设置列与列的间隔（**列间距**）。
+
+```css
+.container {
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+```
+
+`grid-gap` 属性是 **grid-column-gap** 和 **grid-row-gap** 的合并简写形式，语法如下。
+
+```css
+.container {
+  grid-gap: 20px 20px;
+}
+```
+
+如果 `grid-gap` 省略了第二个值，浏览器认为第二个值等于第一个值。
+
+**根据最新标准，上面三个属性名的grid-前缀已经删除，`grid-column-gap` 和 `grid-row-gap` 写成` column-gap` 和 `row-gap`，`grid-gap` 写成 `gap`。**
+
+<iframe height="440" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/bGYMZoN?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/bGYMZoN">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### 3.4 grid-template-areas 属性
+
+网格布局允许指定**"区域"（area）**，一个区域由单个或多个单元格组成。`grid-template-areas` 属性用于定义区域。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas: 'a b c'
+                       'd e f'
+                       'g h i';
+}
+```
+
+上面代码先划分出9个单元格，然后将其定名为a到i的九个区域，分别对应这九个单元格。
+
+多个单元格合并成一个区域的写法如下。
 
 转载文章：[阮一峰 Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
