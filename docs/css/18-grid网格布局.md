@@ -308,6 +308,211 @@ grid-template-columns: repeat(12, 1fr);
 
 多个单元格合并成一个区域的写法如下。
 
+```css
+grid-template-areas: 'a a a'
+                     'b b b'
+                     'c c c';
+```
+
+上面代码将9个单元格分成a、b、c三个区域。
+
+下面是一个布局实例。
+
+```css
+grid-template-areas: "header header header"
+                     "main main sidebar"
+                     "footer footer footer";
+```
+
+上面代码中，顶部是页眉区域 header，底部是页脚区域 footer，中间部分则为 main 和 sidebar。
+
+如果某些区域不需要利用，则使用"点"（.）表示。
+
+```css
+grid-template-areas: 'a . c'
+                     'd . f'
+                     'g . i';
+```
+
+上面代码中，中间一列为点，表示没有用到该单元格，或者该单元格不属于任何区域。
+
+注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为`区域名-start`，终止网格线自动命名为`区域名-end`。
+
+比如，区域名为`header`，则起始位置的水平网格线和垂直网格线叫做`header-start`，终止位置的水平网格线和垂直网格线叫做`header-end`。
+### 3.5 grid-auto-flow 属性
+
+划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。默认的放置顺序是"先行后列"，即先填满第一行，再开始放入第二行，即下图数字的顺序。
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/rNYGoax?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/rNYGoax">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+这个顺序由 `grid-auto-flow` 属性决定，默认值是`row`，即"**先行后列**"。也可以将它设成`column`，变成"**先列后行**"。
+
+```css
+grid-auto-flow: column;
+```
+
+上面代码设置了 `column` 以后，放置顺序就变成了下图。
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/abVKRPZ?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/abVKRPZ">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+`grid-auto-flow` 属性除了设置成 `row` 和 `column` ，还可以设成 `row dense` 和 `column dense`。这两个值主要用于，某些项目指定位置以后，剩下的项目自动尽可能紧密填满。
+
+下面的例子让1号项目和2号项目各占据两个单元格，然后在默认的`grid-auto-flow: row`情况下，会产生下面这样的布局。
+
+<p class="codepen" data-height="400" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="yLPERdB" data-user="347830076" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/347830076/pen/yLPERdB">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+上图中，1号项目后面的位置是空的，这是因为3号项目默认跟着2号项目，所以会排在2号项目后面。
+
+现在修改设置，设为 `row dense`，表示"`先行后列`"，**并且尽可能紧密填满，尽量不出现空格**。
+
+```css
+grid-auto-flow: row dense;
+```
+
+上面代码的效果如下。
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/QWOxJLR?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/QWOxJLR">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+上图会先填满第一行，再填满第二行，所以3号项目就会紧跟在1号项目的后面。8号项目和9号项目就会排到第四行。
+
+如果将设置改为 `column dense` ，表示"先列后行"，并且尽量填满空格。
+
+```css
+grid-auto-flow: column dense;
+```
+
+上面代码的效果如下。
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/xxPzQGq?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/xxPzQGq">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### 3.6 justify-items 属性，align-items 属性，place-items 属性
+
+- `justify-items` 属性设置单元格内容的**水平位置**（左中右），
+- `align-items` 属性设置单元格内容的**垂直位置**（上中下）。
+- `place-items` 属性是` align-items` 属性和 `justify-items` 属性的合并简写形式。
+
+```css
+.container {
+  justify-items: start | end | center | stretch;
+  align-items: start | end | center | stretch;
+}
+```
+
+这两个属性的写法完全相同，都可以取下面这些值。
+
+- **start**：对齐单元格的起始边缘。
+- **end**：对齐单元格的结束边缘。
+- **center**：单元格内部居中。
+- **stretch**：拉伸，占满单元格的整个宽度（默认值）。
+
+```css
+.container {
+  justify-items: start;
+}
+```
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/dyZKQOd?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/dyZKQOd">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+```css
+.container {
+  align-items: start;
+}
+```
+
+上面代码表示，单元格的内容顶部(上)对齐
+
+`place-items` 属性是` align-items` 属性和 `justify-items` 属性的合并简写形式。
+
+```css
+place-items: <align-items> <justify-items>;
+```
+
+如果省略第二个值，则浏览器认为与第一个值相等。
+
+
+```css
+place-items: start end;
+```
+
+### 3.7 justify-content 属性，align-content 属性，place-content 属性
+
+- `justify-content` 属性是**整个内容区域在容器里面的水平位置**（左中右）
+- `align-content` 属性是**整个内容区域的垂直位置**（上中下）。
+- `place-content` 属性是 `align-content` 属性和 `justify-content` 属性的合并简写形式。
+
+```css
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+  align-content: start | end | center | stretch | space-around | space-between | space-evenly;  
+}
+```
+
+这两个属性的写法完全相同，都可以取下面这些值。（下面的图都以justify-content属性为例，align-content属性的图完全一样，只是将水平方向改成垂直方向。）
+
+#### start - 对齐容器的起始边框。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032519.png">
+
+#### end - 对齐容器的结束边框。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032518.png">
+
+#### center - 容器内部居中。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032520.png">
+
+#### stretch - 项目大小没有指定时，拉伸占据整个网格容器。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032521.png">
+
+#### space-around - 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与容器边框的间隔大一倍。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032522.png">
+
+#### space-between - 项目与项目的间隔相等，项目与容器边框之间没有间隔。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032523.png">
+
+#### space-evenly - 项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。
+
+<img class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/bg2019032524.png">
+
+`place-content` 属性是 `align-content` 属性和 `justify-content` 属性的合并简写形式。
+
+```css
+place-content: <align-content> <justify-content>
+```
+
+```css
+place-content: space-around space-evenly;
+```
+如果省略第二个值，浏览器就会假定第二个值等于第一个值。
+
 转载文章：[阮一峰 Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
 <!-- ### 想了解Grid 网格布局教程，可以去看看 <a href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank">阮一峰 Grid 网格布局教程</a>
