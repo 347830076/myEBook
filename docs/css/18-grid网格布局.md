@@ -5,13 +5,19 @@ sidebarDepth: 3
 
 ## 一、概述
 
-网格布局（Grid）是最强大的 CSS 布局方案。
+`网格布局（Grid）`是超强大的 CSS 布局方案，只是兼容性问题，现在还不能流行普及应用到项目上。有些属性IE全军覆没，如果不考虑IE，使用其他主流新版浏览器，或者移动端，小程序等，也是可以使用的。大家可以学起来，以后肯定慢慢普及的。
 
-它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。
+`网格布局`它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。
 
-<img  class="zoom-custom-imgs" src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032501.png">
+下面这样的布局，就是 Grid 布局的拿手好戏。
 
-上图这样的布局，就是 Grid 布局的拿手好戏。
+<iframe height="440" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/zYPmxLp?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/zYPmxLp">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+
 
 Grid 布局与 [Flex 布局](./17-flex弹性布局.md)有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。
 
@@ -217,22 +223,6 @@ grid-template-columns: 100px auto 100px;
 ```
 
 上面代码中，第一、三列的宽度固定，第二列自适应(剩余的宽度)
-
-### 网格线的名称
-
-`grid-template-columns` 属性和 `grid-template-rows` 属性里面，还可以使用方括号，指定每一根网格线的名字，方便以后的引用。
-
-```css
-.container {
-  display: grid;
-  grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];
-  grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4];
-}
-```
-
-上面代码指定网格布局为 3行 x 3列，因此有 4 根垂直网格线和 4 根水平网格线。方括号里面依次是这八根线的名字。
-
-网格布局允许同一根线有多个名字，比如 [fifth-line row-5]。
 
 ### 布局实例
 
@@ -547,6 +537,22 @@ place-content: space-around space-evenly;
 
 从易读易写的角度考虑，还是建议不要合并属性，所以这里就不详细介绍这两个属性了。
 
+### 网格线的名称
+
+`grid-template-columns` 属性和 `grid-template-rows` 属性里面，还可以使用方括号，指定每一根网格线的名字，方便以后的引用。
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];
+  grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4];
+}
+```
+
+上面代码指定网格布局为 3行 x 3列，因此有 4 根垂直网格线和 4 根水平网格线。方括号里面依次是这八根线的名字。
+
+网格布局允许同一根线有多个名字，比如 [fifth-line row-5]。
+
 ## 四、项目属性
 
 下面这些属性定义在项目上面。
@@ -598,11 +604,17 @@ place-content: space-around space-evenly;
 
 ```css
 .item-1 {
-  grid-column-start: header-start;
-  grid-column-end: header-end;
+  grid-column-start: c1;
+  grid-column-end: c3;
 }
 ```
 上面代码中，左边框和右边框的位置，都指定为网格线的名字。
+
+<iframe height="440" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/347830076/embed/NWwOqPb?default-tab=html%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/347830076/pen/NWwOqPb">
+  Untitled</a> by cylyiou (<a href="https://codepen.io/347830076">@347830076</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 这四个属性的值还可以使用span关键字，表示"跨越"，即左右边框（上下边框）之间跨越多少个网格。
 
