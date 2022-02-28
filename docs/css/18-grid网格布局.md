@@ -167,7 +167,7 @@ grid-template-columns: repeat(2, 100px 40px 80px);
 
 #### auto-fill 关键字
 
-有时，单元格的大小是固定的，但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用`auto-fill`关键字表示自动填充，或`auto-fit`也是可以。
+有时，单元格的大小是固定的，但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用`auto-fill`关键字表示自动填充。
 
 ```css
 .container {
@@ -184,6 +184,9 @@ grid-template-columns: repeat(2, 100px 40px 80px);
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
+#### auto-fit 关键字
+
+和 `auto-fit` 的行为差不多，也是自动填充，只不过 `auto-fit` 是填充满一行，列不够一行的，所有列自己平分拉满一行。大家可以自行写列子看看效果。
 #### fr 关键字
 
 为了方便表示比例关系，网格布局提供了`fr`关键字（fraction 的缩写，意为"片段"）。如果两列的宽度分别为1fr和2fr，就表示后者是前者的两倍。
