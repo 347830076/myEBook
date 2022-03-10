@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "npm run compress && vuepress dev docs",
     "build": "npm run compress && vuepress build docs",
-    "deploy": "npm run compress && bash deploy.sh",
+    "deploy": "bash deploy.sh",
+    "deploy:gitee": "bash deploy-gitee.sh",
     "compress": "node ./mtp.js"
   },
   "devDependencies": {
