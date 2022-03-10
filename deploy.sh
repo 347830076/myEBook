@@ -4,7 +4,7 @@
 # set -e
 
 # 生成静态文件
-# npm run build
+npm run build
 
 # 先提交代码到main分支
 git add -A
