@@ -2,7 +2,15 @@
 html, body,ul{
   margin: 0;
 }
+#app{
+  background-color: #000;
+}
+html,body{
+  height: 100vh;
+  background-color: #000;
+}
 .login-container {
+
 	.layer {
 	  position: absolute;
 	  height: 100%;
@@ -37,6 +45,13 @@ html, body,ul{
 	  height: 100%;
     z-index: 1000;
 	}
+  .btn{
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #409eff;
+    border-color: #409eff;
+  }
 }
 </style>
 
@@ -47,8 +62,9 @@ html, body,ul{
         <div class="title">欢迎来到前端零基础学习营</div>
         <div class="desc">热爱前端，热爱分享</div>
         <div>
-          <a href="/myebook/html/">
-            <el-button type="primary" size="medium" icon="el-icon-right" class="btn">开始学习</el-button>
+          <a href="/html/" class="btn">
+            <!-- <el-button type="primary" size="medium" icon="el-icon-right" class="btn">开始学习</el-button> -->
+            开始学习
           </a>
         </div>
       </div>
@@ -82,9 +98,9 @@ html, body,ul{
 import Vue from 'vue'
 import vueParticles from 'vue-particles'
 Vue.use(vueParticles)
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI)
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
+// Vue.use(ElementUI)
 export default {
   name: 'Login',
   components: {

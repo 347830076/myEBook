@@ -3,7 +3,7 @@ const moment = require('moment')
 moment.locale('zh-cn')
 
 module.exports = {
-    base: '/myebook/',
+    base: '/',
     title: '阿离王带你零基础学习前端',
     description: '阿离王带你零基础学习前端',
     dest: 'dist',
@@ -205,7 +205,10 @@ module.exports = {
                 path: '/js/',
                 sidebarDepth: 1,
                 children: [
-                    '/js/1-语法结构'
+                    '/js/1-语法结构',
+                    '/js/2-变量',
+                    '/js/3-运算符',
+                    '/js/4-流程控制',
                 ]
             }
 
