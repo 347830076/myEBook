@@ -52,6 +52,19 @@ html,body{
     background-color: #409eff;
     border-color: #409eff;
   }
+
+  .footer{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 20px;
+    z-index: 99999;
+    color: #fff;
+    text-align: center;
+    a{
+      color: #1890FF;
+    }
+  }
 }
 </style>
 
@@ -67,6 +80,11 @@ html,body{
             开始学习
           </a>
         </div>
+      </div>
+      <div class="footer"> 
+        <a href="https://beian.miit.gov.cn/" target="_blank" >
+          粤ICP备20068847号-1
+        </a> 
       </div>
     </div>
 

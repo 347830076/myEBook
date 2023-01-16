@@ -27,6 +27,17 @@
     .zoom-custom-imgs{
       margin: 10px 0;
     }
+
+    .footer{
+      position: sticky;
+      left: 0;
+      width: 100%;
+      top: 100%;
+      text-align: center;
+    }
+    .footer a{
+      color: #ddd;
+    }
 </style>
 <template>
   <div
@@ -69,6 +80,11 @@
       <template #bottom>
         <slot name="page-bottom" />
         <!-- <Vssue class="theme-default-content content__default" :options="{ locale: 'zh' }" /> -->
+        <div class="footer"> 
+          <a href="https://beian.miit.gov.cn/" target="_blank" >
+            粤ICP备20068847号-1
+          </a> 
+        </div>
       </template>
     </Page>
   </div>
